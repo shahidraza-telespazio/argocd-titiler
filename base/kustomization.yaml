@@ -8,6 +8,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-
-labels:
-  app: titiler-stacapi
+# commonLabels:
+#   app: titiler-stacapi
