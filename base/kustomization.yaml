@@ -6,7 +6,7 @@ namespace: titiler
 resources:
   - namespace.yaml
   - deployment.yaml
-  - service.yaml
+  # - service.yaml
   - ingress.yaml
 
 commonLabels:
