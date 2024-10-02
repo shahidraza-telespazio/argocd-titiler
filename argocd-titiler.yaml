@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: titiler-stacapi
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/shahidraza-telespazio/argocd-titiler"
+    targetRevision: HEAD
+    path: overlays/dev
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: titiler
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

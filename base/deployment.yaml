@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: titiler-stacapi
+  namespace: titiler
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: titiler-stacapi
+  template:
+    metadata:
+      labels:
+        app: titiler-stacapi
+    spec:
+      containers:
+        - name: titiler-stacapi
+          image: developmentseed/titiler-stacapi:latest
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
