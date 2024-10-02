@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: titiler-stacapi
-          image: developmentseed/titiler-stacapi:latest
+          image: shahidraza0098/titiler-stacapi:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           resources:
