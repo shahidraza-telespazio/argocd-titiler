@@ -26,3 +26,6 @@ spec:
             requests:
               memory: "256Mi"
               cpu: "250m"
+          env:
+            - name: TITILER_STACAPI_STAC_API_URL
+              value: "https://api.stac"
