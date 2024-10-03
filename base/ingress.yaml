@@ -1,11 +1,34 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: titiler-stacapi
+#   namespace: titiler
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
+#   rules:
+#     - host: titiler.test.com
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: titiler-stacapi
+#                 port:
+#                   number: 80
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: titiler-stacapi
   namespace: titiler
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.org/mergeable-ingress-type: minion
+    nginx.org/location-snippets: |
+      internal;
 spec:
+  ingressClassName: nginx
   rules:
     - host: titiler.test.com
       http:
