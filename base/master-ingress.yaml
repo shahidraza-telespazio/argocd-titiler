@@ -2,7 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: titiler-stacapi-master
-  namespace: titiler
   annotations:
     nginx.org/mergeable-ingress-type: master
 spec:
