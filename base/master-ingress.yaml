@@ -10,7 +10,7 @@ spec:
     - host: titiler.test.com
       http:
         paths:
-          - path: /
+          - path: /titiler/stac
             pathType: Prefix
             backend:
               service:
