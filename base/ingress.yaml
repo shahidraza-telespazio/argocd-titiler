@@ -5,8 +5,6 @@ metadata:
   namespace: titiler
   annotations:
     nginx.org/mergeable-ingress-type: minion
-    nginx.org/location-snippets: |
-      internal;
 spec:
   ingressClassName: nginx
   rules:
